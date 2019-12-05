@@ -1,23 +1,17 @@
-CREATE TABLE account
+CREATE TABLE api_key
 (
     id serial PRIMARY KEY,
-    username VARCHAR (50) UNIQUE NOT NULL,
-    password VARCHAR (200) NOT NULL
+    api_key uuid NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT now ()
 );
 
 CREATE TABLE question
 (
     id serial PRIMARY KEY,
     question TEXT NOT NULL,
-    topic SMALLINT NOT NULL
+    topic SMALLINT NOT NULL,
+    tokens TEXT NOT NULL,
+    created_by INTEGER REFERENCES api_key (id)
 );
 
-CREATE TABLE vote
-(
-    id serial PRIMARY KEY,
-    created_by integer NOT NULL REFERENCES account (id) ON DELETE CASCADE,
-    question_id integer NOT NULL REFERENCES question (id) ON DELETE CASCADE
-);
-
-INSERT INTO account (username, password) VALUES ('admin', '$2y$12$21x2epIAPEkeEqgWdNPARerIifsNv0UIdbHH6vYp
-/Uk/osvP4ZzJq');
+INSERT INTO api_key (api_key) VALUES ('dbaeae2a-c663-4359-ae22-6496eafa1679');
