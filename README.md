@@ -1,5 +1,5 @@
 # COMP4651-Project
-This project will demostrate how we trasnform our model into a tensorflow.js and host it as an API on node.js.
+This project will demostrate how we trasnformed our model into a tensorflow.js and host it as an API on node.js.
 
 ## Run the server
 
