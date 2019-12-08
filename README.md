@@ -1,6 +1,11 @@
 # COMP4651-Project
 This project will demostrate how we trasnform our model into a tensorflow.js and host it as an API on node.js.
 
+## Run the server
+
+1. Install `Docker` and `Docker Compose`
+2. Run `docker-compose up --build` on project directory
+
 ## API Gateway
 
 ### Classify and save the question
